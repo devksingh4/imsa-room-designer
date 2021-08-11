@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/imsa-room-designer/static/css/main.c7c3194f.chunk.css",
-    "main.js": "/imsa-room-designer/static/js/main.dd5c9342.chunk.js",
-    "main.js.map": "/imsa-room-designer/static/js/main.dd5c9342.chunk.js.map",
+    "main.js": "/imsa-room-designer/static/js/main.9a1e899b.chunk.js",
+    "main.js.map": "/imsa-room-designer/static/js/main.9a1e899b.chunk.js.map",
     "runtime-main.js": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js",
     "runtime-main.js.map": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js.map",
     "static/css/2.b17cfdca.chunk.css": "/imsa-room-designer/static/css/2.b17cfdca.chunk.css",
@@ -32,6 +32,6 @@
     "static/css/2.b17cfdca.chunk.css",
     "static/js/2.bc5e9b65.chunk.js",
     "static/css/main.c7c3194f.chunk.css",
-    "static/js/main.dd5c9342.chunk.js"
+    "static/js/main.9a1e899b.chunk.js"
   ]
 }
