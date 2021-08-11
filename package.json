@@ -12,13 +12,18 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/three": "0.93.31",
+    "babel-plugin-import-globals": "^2.0.0",
     "bootstrap": "^5.1.0",
     "firebase": "^8.9.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
+    "react-planner": "^2.0.6",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "three": "0.93.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -49,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.18",
     "@types/react-router-dom": "^5.1.8",
     "gh-pages": "^3.2.3"
   }
