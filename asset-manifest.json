@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/imsa-room-designer/static/css/main.c7c3194f.chunk.css",
-    "main.js": "/imsa-room-designer/static/js/main.81c3ff65.chunk.js",
-    "main.js.map": "/imsa-room-designer/static/js/main.81c3ff65.chunk.js.map",
+    "main.js": "/imsa-room-designer/static/js/main.c0dc2385.chunk.js",
+    "main.js.map": "/imsa-room-designer/static/js/main.c0dc2385.chunk.js.map",
     "runtime-main.js": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js",
     "runtime-main.js.map": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js.map",
     "static/css/2.c490997a.chunk.css": "/imsa-room-designer/static/css/2.c490997a.chunk.css",
-    "static/js/2.00aa526e.chunk.js": "/imsa-room-designer/static/js/2.00aa526e.chunk.js",
-    "static/js/2.00aa526e.chunk.js.map": "/imsa-room-designer/static/js/2.00aa526e.chunk.js.map",
+    "static/js/2.535d0603.chunk.js": "/imsa-room-designer/static/js/2.535d0603.chunk.js",
+    "static/js/2.535d0603.chunk.js.map": "/imsa-room-designer/static/js/2.535d0603.chunk.js.map",
     "index.html": "/imsa-room-designer/index.html",
     "static/css/2.c490997a.chunk.css.map": "/imsa-room-designer/static/css/2.c490997a.chunk.css.map",
     "static/css/main.c7c3194f.chunk.css.map": "/imsa-room-designer/static/css/main.c7c3194f.chunk.css.map",
-    "static/js/2.00aa526e.chunk.js.LICENSE.txt": "/imsa-room-designer/static/js/2.00aa526e.chunk.js.LICENSE.txt"
+    "static/js/2.535d0603.chunk.js.LICENSE.txt": "/imsa-room-designer/static/js/2.535d0603.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dfa9688d.js",
     "static/css/2.c490997a.chunk.css",
-    "static/js/2.00aa526e.chunk.js",
+    "static/js/2.535d0603.chunk.js",
     "static/css/main.c7c3194f.chunk.css",
-    "static/js/main.81c3ff65.chunk.js"
+    "static/js/main.c0dc2385.chunk.js"
   ]
 }
