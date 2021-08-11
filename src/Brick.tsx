@@ -22,8 +22,8 @@ export class Bricks extends Component<BricksProps> {
                             {({isSignedIn, firebase}) => {
                                 if (isSignedIn === true) {
                                     return (
-                                        <a key={`${this.props.props[i].name.toLowerCase()}.Link`}
-                                           href={this.props.props[i].name.toLowerCase().replace(" ", "-")}>
+                                        <Link key={`${this.props.props[i].name.toLowerCase()}.Link`}
+                                              to={this.props.props[i].name.toLowerCase().replace(' ', '-')}>
                                             <Card key={`${this.props.props[i].name.toLowerCase()}`}
                                                   style={{margin: 20}}>
                                                 <Card.Body>
@@ -33,14 +33,14 @@ export class Bricks extends Component<BricksProps> {
                                                                style={{color: '#005faf'}}>{this.props.props[i].description}</Card.Text>
                                                 </Card.Body>
                                             </Card>
-                                        </a>
+                                        </Link>
                                     );
                                 } else {
                                     return (
                                         <a onClick={() => {
                                             const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
                                             firebase.auth().signInWithPopup(googleAuthProvider);
-                                        }} href={"/#/"}>
+                                        }} href="javascript:;">
                                             <Card key={`${this.props.props[i].name.toLowerCase()}`}
                                                   style={{margin: 20}}>
                                                 <Card.Body>
