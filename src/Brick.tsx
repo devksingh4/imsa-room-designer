@@ -23,7 +23,7 @@ export class Bricks extends Component<BricksProps> {
                                 if (isSignedIn === true) {
                                     return (
                                         <Link key={`${this.props.props[i].name.toLowerCase()}.Link`}
-                                              to={this.props.props[i].name.toLowerCase().replace(' ', '-')}>
+                                              to={this.props.props[i].name.toLowerCase().replace(' ', '-')} style={{textDecoration: 'none', color: 'inherit'}}>
                                             <Card key={`${this.props.props[i].name.toLowerCase()}`}
                                                   style={{margin: 20}}>
                                                 <Card.Body>
@@ -37,7 +37,7 @@ export class Bricks extends Component<BricksProps> {
                                     );
                                 } else {
                                     return (
-                                        <a onClick={() => {
+                                        <a style={{textDecoration: 'none', color: 'inherit'}} onClick={() => {
                                             const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
                                             firebase.auth().signInWithPopup(googleAuthProvider);
                                         }} href="javascript:;">
