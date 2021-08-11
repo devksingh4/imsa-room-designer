@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Route,
     Switch
 } from "react-router-dom";
@@ -13,7 +13,7 @@ import NotFound from './NotFound';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
+        <Router basename={'imsa-room-designer'}>
             <Switch>
                 <Route path="/" exact     component={ Home } />
                 <Route path="/home" exact     component={ Home } />
