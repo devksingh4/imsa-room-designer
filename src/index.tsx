@@ -1,22 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-    HashRouter,
-    Route
+    HashRouter as Router,
+    Route,
+    Switch
 } from "react-router-dom";
 
 // Screens
 import Home from './Home';
 import Designer from './Designer';
+import NotFound from './NotFound';
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter>
-            <div>
+        <Router>
+            <Switch>
                 <Route path="/" exact     component={ Home } />
+                <Route path="/home" exact     component={ Home } />
                 <Route path="/designer"     component={ Designer } />
-            </div>
-        </HashRouter>
+                <Route component={NotFound} />
+            </Switch>
+        </Router>
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -13,7 +13,7 @@ export class CustomNavbar extends Component<CustomNavbarProps> {
         return (
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="#">
                         IMSA Room Designer
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
