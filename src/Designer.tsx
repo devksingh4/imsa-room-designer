@@ -33,13 +33,12 @@ function Designer() {
         <div>
             <CustomNavbar active='designer'/>
             <Provider store={store as any}>
-            <ReactPlanner
-                catalog={MyCatalog}
-                width={800}
-                height={600}
-                stateExtractor={(state: { get: (arg0: string) => any; }) => state.get('react-planner')}
-                store={store}
-            />
+                <ReactPlanner
+                    catalog={MyCatalog}
+                    width={800}
+                    height={600}
+                    stateExtractor={state => state.get('react-planner')}
+                />
             </Provider>
         </div>
 

@@ -13,7 +13,7 @@ interface BricksProps {
 
 export class Bricks extends Component<BricksProps> {
     createGroup = () => {
-        let group = []
+        let group: any[] = []
         for (let i = 0; i < this.props.props.length; i++) {
             if (this.props.props[i].authenticated) {
                 group.push(<FirebaseAuthProvider {...config} firebase={firebase}>
