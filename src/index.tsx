@@ -18,6 +18,9 @@ ReactDOM.render(
                 <Route path="/" exact     component={ Home } />
                 <Route path="/home" exact     component={ Home } />
                 <Route path="/scheduler"     component={ Scheduler } />
+                <Route path='/view'>
+                    <Scheduler hide={true} />
+                </Route>
                 <Route component={NotFound} />
             </Switch>
         </Router>

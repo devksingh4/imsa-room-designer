@@ -2,15 +2,20 @@ import './index.css'
 import { CustomNavbar } from "./CustomNavbar";
 import Form from 'react-bootstrap/Form';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import firebase from "firebase/app";
+import "firebase/database";
 import "firebase/auth";
 import Container from 'react-bootstrap/esm/Container';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import { Component } from 'react';
+import { config } from './FirebaseConfig';
+import copy from 'copy-to-clipboard';
 
 
 interface SchedulerProps {
-
+    hide: boolean
+    location?: any
 }
 
 interface SchedulerState {
@@ -18,15 +23,45 @@ interface SchedulerState {
     scheduleName: string,
     powerschoolSchedule: string,
     powerschoolArray: string[],
-    cleanedSchedule?: any[]
+    cleanedSchedule?: any[],
+    firebase: any,
+    humanSchedule?: any[],
+    surl: string,
+    copied?: string
 }
 
 export default class Scheduler extends Component<SchedulerProps, SchedulerState> {
     // @ts-ignore
     constructor(props: SchedulerProps) {
         super(props);
-        this.state = { share: false, scheduleName: 'Semester 1 Schedule', powerschoolSchedule: '', powerschoolArray: [] };
+        this.state = { share: false, scheduleName: '', powerschoolSchedule: '', powerschoolArray: [], firebase: firebase.apps.length !== 0 ? firebase.app(): firebase.initializeApp(config), surl: ''};
     }
+    componentDidMount() {
+        if (!this.props.hide) return;
+        const id = this.getParameterByName('id');
+        const userId = this.getParameterByName('user');
+        if (!id) return;
+        if (!userId) return;
+        this.state.firebase.database().ref('schedules/'+userId ).get().then(snapshot => {
+            if (snapshot.exists()) {
+                const item = snapshot.val()[id]
+                this.setState({powerschoolArray: item['powerschoolArray'], scheduleName: item['scheduleName']})
+                this.getModSchedule(this.state.powerschoolArray);
+            } else {
+                alert("No matching schedule available!");
+              }
+        })
+
+    }
+    getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    
     handleScheduleName(event) {
         this.setState({ scheduleName: event?.target.value })
     }
@@ -49,18 +84,18 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
         powerschoolArray = powerschoolArray.map(function (entry) {
             return entry.split("\t");
         });
+        this.setState({powerschoolArray})
         this.getModSchedule(powerschoolArray);
     }
-    range(a,b){
+    range(a, b) {
         if (b === undefined) {
             b = a;
             a = 1;
         }
-        return [...Array(b-a+1).keys()].map(x => x+a);
+        return [...Array(b - a + 1).keys()].map(x => x + a);
     }
-    
+
     getModSchedule(powerschoolArray) {
-        if (this.state.powerschoolSchedule === '') return null;
         let interim: any[][] = [];
         powerschoolArray.forEach(element => {
             let expression: string = element[0]
@@ -105,13 +140,14 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
             days = newDays
             mods.forEach(mod => {
                 days.forEach(day => {
-                    datastruct[mod][day] = {name: element[0], teacher: element[1], room: element[2]}
+                    datastruct[mod][day] = { name: element[0], teacher: element[1], room: element[2] }
                 });
             });
         })
         // @ts-ignore
-        this.setState({ cleanedSchedule: datastruct })
+        this.setState({ cleanedSchedule: datastruct, humanSchedule: interim })
     }
+    
     renderHelper(mod) {
         if (!this.state.cleanedSchedule) return null;
         const modItems = this.state.cleanedSchedule[mod - 1].map((item) => {
@@ -120,17 +156,27 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
         })
         return (
             <tr>
-                <td>{mod}</td>
+                <td key={'mod-' + mod}>{mod}</td>
                 {modItems}
             </tr>
         )
+    }
+    handleSaveSchedule() {
+        if (!this.state.cleanedSchedule) return null;
+        const userId = this.state.firebase.auth().currentUser.uid;
+        const postref = this.state.firebase.database().ref('schedules/' + userId).push({
+            powerschoolArray: this.state.powerschoolArray,
+            scheduleName: this.state.scheduleName
+        })
+        this.setState({surl: `${window.location.origin}/imsa-schedule-share/#/view?id=${postref.key}&user=${userId}`})
+        this.setState({copied: this.state.surl})
     }
     render() {
         return (
             <>
                 <CustomNavbar active='designer' />
                 <br></br>
-                <Container>
+                {this.props.hide ? null : <Container>
                     <h1>Input Data</h1>
                     <Form>
                         <Form.Group className="mb-3" controlId="scheduleInput">
@@ -153,12 +199,14 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
                             Share Schedule
                         </ToggleButton>
                         <br></br>
-                        <Button variant="primary">Create Schedule</Button>{' '}
+                        <Button variant="primary" onClick={this.handleSaveSchedule.bind(this)}>{this.state.copied ? "Copied to clipboard!" : "Save Schedule"}</Button>{' '}
+                        <a>{this.state.copied}</a>
                     </Form>
+                </Container>}
+                <Container>
+                    <h1>{this.props.hide ? this.state.scheduleName : "Your Schedule"}</h1>
                 </Container>
                 <Container fluid="xl">
-                    <h1>Your Schedule</h1>
-
                     <Table striped bordered hover>
                         <thead>
                             <tr>

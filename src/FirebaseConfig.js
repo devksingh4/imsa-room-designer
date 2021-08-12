@@ -6,5 +6,5 @@ export const config = {
     messagingSenderId: "767303068136",
     appId: "1:767303068136:web:54c82fffc7cabb05ac9c5d",
     measurementId: "G-8TTP95Q69P",
-    databaseURL: "https://imsa-room-designer.firebaseio.com",
+    databaseURL: "https://imsa-room-designer-default-rtdb.firebaseio.com",
 };
