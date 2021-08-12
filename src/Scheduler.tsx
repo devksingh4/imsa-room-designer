@@ -51,6 +51,14 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
         });
         this.getModSchedule(powerschoolArray);
     }
+    range(a,b){
+        if (b === undefined) {
+            b = a;
+            a = 1;
+        }
+        return [...Array(b-a+1).keys()].map(x => x+a);
+    }
+    
     getModSchedule(powerschoolArray) {
         if (this.state.powerschoolSchedule === '') return null;
         let interim: any[][] = [];
@@ -81,26 +89,25 @@ export default class Scheduler extends Component<SchedulerProps, SchedulerState>
         interim.forEach(element => {
             let mods = element[3]
             let days = element[4]
-            let newDays = []
+            let newDays: any[] = []
             days.forEach(day => {
                 if (day.includes('-')) {
+                    let split = day.split('-')
+                    split = split.map(item => dayMappings[item]);
+                    let rg = this.range(split[0], split[1])
+                    rg = rg.filter(item => item !== 2)
                     // @ts-ignore
-                    return day.split('-').forEach(yeet => newDays.push(dayMappings[yeet]))
+                    return rg.forEach(item => newDays.push(item))
                 }
                 // @ts-ignore
                 return newDays.push(dayMappings[day])
             })
-            // handle courses that run all 4 days such that the range endpoints are not adjacent
-            if (Math.abs(newDays[0] - newDays[1]) != 1) {
-                // @ts-ignore
-                newDays = [...Array(newDays[1] + 1).keys()];
-                newDays = newDays.filter(item => { return item !== 2 })
-            }
+            days = newDays
             mods.forEach(mod => {
-                newDays.forEach(day => {
-                    datastruct[mod][day] = { name: element[0], teacher: element[1], room: element[2] }
-                })
-            })
+                days.forEach(day => {
+                    datastruct[mod][day] = {name: element[0], teacher: element[1], room: element[2]}
+                });
+            });
         })
         // @ts-ignore
         this.setState({ cleanedSchedule: datastruct })
