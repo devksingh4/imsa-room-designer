@@ -17,9 +17,12 @@ ReactDOM.render(
             <Switch>
                 <Route path="/" exact     component={ Home } />
                 <Route path="/home" exact     component={ Home } />
-                <Route path="/scheduler"     component={ Scheduler } />
-                <Route path='/view'>
+                <Route path="/scheduler" exact     component={ Scheduler } />
+                <Route path='/view' exact>
                     <Scheduler hide={true} />
+                </Route>
+                <Route path='/scheduler/edit' exact>
+                    <Scheduler edit={true} />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

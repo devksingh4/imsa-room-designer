@@ -1,4 +1,3 @@
-import React from 'react';
 import {Bricks} from './Brick'
 import Container from 'react-bootstrap/Container'
 import './index.css'
@@ -12,7 +11,7 @@ function Home() {
             <Container>
                 <Bricks
                     props={[
-                        {name: "Scheduler", description: "Enter the schedule creator", authenticated: true},
+                        {name: "Scheduler", description: "Enter the schedule creator", authenticated: false},
                         {name: "View Schedules", description: "View your saved schedules", authenticated: true},
                     ]}
                 />
