@@ -15,7 +15,7 @@ export class CustomNavbar extends Component<CustomNavbarProps> {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#">
-                        IMSA Room Designer
+                        IMSA Schedule Share
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -25,11 +25,11 @@ export class CustomNavbar extends Component<CustomNavbarProps> {
                                     Home
                                 </Link>
                             </Nav.Link>
-                            <Nav.Link> <Link to="/designer" style={{textDecoration: 'none', color: 'inherit'}}>
-                                Designer
+                            <Nav.Link> <Link to="/scheduler" style={{textDecoration: 'none', color: 'inherit'}}>
+                                Scheduler
                             </Link></Nav.Link>
-                            <Nav.Link> <Link to="/view-designs" style={{textDecoration: 'none', color: 'inherit'}}>
-                                View Designs
+                            <Nav.Link> <Link to="/view-schedules" style={{textDecoration: 'none', color: 'inherit'}}>
+                                View Schedules
                             </Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

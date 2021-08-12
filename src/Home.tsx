@@ -12,8 +12,8 @@ function Home() {
             <Container>
                 <Bricks
                     props={[
-                        {name: "Designer", description: "Enter the room designer", authenticated: true},
-                        {name: "View Designs", description: "View your room designs", authenticated: true},
+                        {name: "Scheduler", description: "Enter the schedule creator", authenticated: true},
+                        {name: "View Schedules", description: "View your saved schedules", authenticated: true},
                     ]}
                 />
             </Container>

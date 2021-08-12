@@ -8,7 +8,7 @@ import {
 
 // Screens
 import Home from './Home';
-import Designer from './Designer';
+import Scheduler from './Scheduler';
 import NotFound from './NotFound';
 
 ReactDOM.render(
@@ -17,7 +17,7 @@ ReactDOM.render(
             <Switch>
                 <Route path="/" exact     component={ Home } />
                 <Route path="/home" exact     component={ Home } />
-                <Route path="/designer"     component={ Designer } />
+                <Route path="/scheduler"     component={ Scheduler } />
                 <Route component={NotFound} />
             </Switch>
         </Router>
