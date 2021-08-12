@@ -1,37 +1,23 @@
 {
   "files": {
-    "main.css": "/imsa-room-designer/static/css/main.c7c3194f.chunk.css",
-    "main.js": "/imsa-room-designer/static/js/main.cd243292.chunk.js",
-    "main.js.map": "/imsa-room-designer/static/js/main.cd243292.chunk.js.map",
-    "runtime-main.js": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js",
-    "runtime-main.js.map": "/imsa-room-designer/static/js/runtime-main.dfa9688d.js.map",
-    "static/css/2.b17cfdca.chunk.css": "/imsa-room-designer/static/css/2.b17cfdca.chunk.css",
-    "static/js/2.6541b890.chunk.js": "/imsa-room-designer/static/js/2.6541b890.chunk.js",
-    "static/js/2.6541b890.chunk.js.map": "/imsa-room-designer/static/js/2.6541b890.chunk.js.map",
-    "index.html": "/imsa-room-designer/index.html",
-    "static/css/2.b17cfdca.chunk.css.map": "/imsa-room-designer/static/css/2.b17cfdca.chunk.css.map",
-    "static/css/main.c7c3194f.chunk.css.map": "/imsa-room-designer/static/css/main.c7c3194f.chunk.css.map",
-    "static/js/2.6541b890.chunk.js.LICENSE.txt": "/imsa-room-designer/static/js/2.6541b890.chunk.js.LICENSE.txt",
-    "static/media/bricks-normal.jpg": "/imsa-room-designer/static/media/bricks-normal.81e7a7e6.jpg",
-    "static/media/bricks.jpg": "/imsa-room-designer/static/media/bricks.a07d30a0.jpg",
-    "static/media/ceramic-tile.jpg": "/imsa-room-designer/static/media/ceramic-tile.e8e5de08.jpg",
-    "static/media/door.mtl": "/imsa-room-designer/static/media/door.07649cac.mtl",
-    "static/media/door.png": "/imsa-room-designer/static/media/door.81b29e93.png",
-    "static/media/door.obj": "/imsa-room-designer/static/media/door.cbf94d80.obj",
-    "static/media/grass.jpg": "/imsa-room-designer/static/media/grass.e470a2ce.jpg",
-    "static/media/painted-normal.jpg": "/imsa-room-designer/static/media/painted-normal.340a84d3.jpg",
-    "static/media/painted.jpg": "/imsa-room-designer/static/media/painted.bee3f626.jpg",
-    "static/media/parquet.jpg": "/imsa-room-designer/static/media/parquet.e5ae1316.jpg",
-    "static/media/strand-porcelain.jpg": "/imsa-room-designer/static/media/strand-porcelain.c232d250.jpg",
-    "static/media/texture.jpg": "/imsa-room-designer/static/media/texture.cc80bee2.jpg",
-    "static/media/tile1.jpg": "/imsa-room-designer/static/media/tile1.c7ae6f4d.jpg",
-    "static/media/wall.png": "/imsa-room-designer/static/media/wall.6e023ff2.png"
+    "main.css": "/imsa-schedule-share/static/css/main.c7c3194f.chunk.css",
+    "main.js": "/imsa-schedule-share/static/js/main.520ec684.chunk.js",
+    "main.js.map": "/imsa-schedule-share/static/js/main.520ec684.chunk.js.map",
+    "runtime-main.js": "/imsa-schedule-share/static/js/runtime-main.b1a63de1.js",
+    "runtime-main.js.map": "/imsa-schedule-share/static/js/runtime-main.b1a63de1.js.map",
+    "static/css/2.c490997a.chunk.css": "/imsa-schedule-share/static/css/2.c490997a.chunk.css",
+    "static/js/2.8b88acf4.chunk.js": "/imsa-schedule-share/static/js/2.8b88acf4.chunk.js",
+    "static/js/2.8b88acf4.chunk.js.map": "/imsa-schedule-share/static/js/2.8b88acf4.chunk.js.map",
+    "index.html": "/imsa-schedule-share/index.html",
+    "static/css/2.c490997a.chunk.css.map": "/imsa-schedule-share/static/css/2.c490997a.chunk.css.map",
+    "static/css/main.c7c3194f.chunk.css.map": "/imsa-schedule-share/static/css/main.c7c3194f.chunk.css.map",
+    "static/js/2.8b88acf4.chunk.js.LICENSE.txt": "/imsa-schedule-share/static/js/2.8b88acf4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.dfa9688d.js",
-    "static/css/2.b17cfdca.chunk.css",
-    "static/js/2.6541b890.chunk.js",
+    "static/js/runtime-main.b1a63de1.js",
+    "static/css/2.c490997a.chunk.css",
+    "static/js/2.8b88acf4.chunk.js",
     "static/css/main.c7c3194f.chunk.css",
-    "static/js/main.cd243292.chunk.js"
+    "static/js/main.520ec684.chunk.js"
   ]
 }
