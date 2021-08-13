@@ -9,6 +9,7 @@ import {
 // Screens
 import Home from './Home';
 import Scheduler from './Scheduler';
+import ViewSchedules from './ViewSchedules';
 import NotFound from './NotFound';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path="/" exact     component={ Home } />
                 <Route path="/home" exact     component={ Home } />
                 <Route path="/scheduler" exact     component={ Scheduler } />
+                <Route path="/view-schedules" exact     component={ ViewSchedules } />
                 <Route path='/view' exact>
                     <Scheduler hide={true} />
                 </Route>
